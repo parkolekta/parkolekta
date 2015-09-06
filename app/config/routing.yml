@@ -1,3 +1,7 @@
+par_kolekta:
+    resource: "@ParKolektaBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

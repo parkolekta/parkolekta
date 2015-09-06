@@ -1,0 +1,3 @@
+par_kolekta_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ParKolektaBundle:Default:index }

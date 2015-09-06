@@ -1,0 +1,33 @@
+# src/Par/KolektaBundle/Resources/config/doctrine/Debts.orm.yml
+Par\KolektaBundle\Entity\Debts:
+  type: entity
+  table: debts
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      type: string
+      length: 255
+      unique: true
+    description:
+      type: text
+    date:
+      type: date
+    amount:
+      type: integer
+      length: 255
+    debts_id:
+      type: integer
+      length: 255
+  manyToOne:
+    debts_type:
+      targetEntity: Debts_type
+      inversedBy: debts
+      joinColumn:
+        name: debts_id
+        referencedColumnName: id
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
+    preUpdate: [ setUpdatedAtValue ]
