@@ -1,0 +1,17 @@
+# src/Par/KolektaBundle/Resources/config/doctrine/Role.orm.yml
+Par\KolektaBundle\Entity\Role:
+  type: entity
+  table: role
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      type: string
+      length: 255
+      unique: true
+  oneToMany:
+    users:
+      targetEntity: User
+      mappedBy: role

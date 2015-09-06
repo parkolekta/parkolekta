@@ -1,0 +1,45 @@
+# src/Par/KolektaBundle/Resources/config/doctrine/User.orm.yml
+Par\KolektaBundle\Entity\User:
+  type: entity
+  table: user
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    jbg:
+      type: integer
+      length: 255
+      unique: true
+    name:
+      type: string
+      length: 255
+    secname:
+      type: string
+      length: 255
+    address:
+      type: string
+      length: 255
+    tel1:
+      type: string
+      length: 255
+    tel2:
+      type: string
+      length: 255
+    tel3:
+      type: string
+      length: 255
+  oneToMany:
+    debts:
+      targetEntity: Debts
+      mappedBy: user
+    user_groups:
+      targetEntity: User_group
+      mappedBy: user
+  manyToOne:
+    role:
+      targetEntity: Role
+      inversedBy: users
+      joinColumn:
+        name: role_id
+        referencedColumnName: id

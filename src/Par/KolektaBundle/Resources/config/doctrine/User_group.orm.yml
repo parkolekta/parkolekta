@@ -1,0 +1,28 @@
+# src/Par/KolektaBundle/Resources/config/doctrine/User_group.orm.yml
+Par\KolektaBundle\Entity\User_group:
+  type: entity
+  table: user_group
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    user_id:
+      type: integer
+      length: 255
+    group_id:
+      type: integer
+      length: 255
+  manyToOne:
+    user:
+      targetEntity: User
+      inversedBy: user_groups
+      joinColumn:
+        name: user_id
+        referencedColumnName: id
+    user_group:
+      targetEntity: Group
+      inversedBy: user_groups
+      joinColumn:
+        name: group_id
+        referencedColumnName: id

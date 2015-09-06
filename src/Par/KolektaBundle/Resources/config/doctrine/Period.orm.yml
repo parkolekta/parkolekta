@@ -1,0 +1,24 @@
+# src/Par/KolektaBundle/Resources/config/doctrine/Period.orm.yml
+Par\KolektaBundle\Entity\Period:
+  type: entity
+  table: period
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      type: string
+      length: 255
+      unique: true
+    debts_id:
+      type: integer
+      length: 255
+  manyToOne:
+    debts:
+      targetEntity: Debts
+      inversedBy: periods
+      joinColumn:
+        name: debts_id
+        referencedColumnName: id
+

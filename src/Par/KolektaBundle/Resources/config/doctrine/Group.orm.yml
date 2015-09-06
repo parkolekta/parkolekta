@@ -1,0 +1,17 @@
+# src/Par/KolektaBundle/Resources/config/doctrine/Group.orm.yml
+Par\KolektaBundle\Entity\Group:
+  type: entity
+  table: group
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      type: string
+      length: 255
+      unique: true
+  oneToMany:
+    user_groups:
+      targetEntity: User_group
+      mappedBy: group
