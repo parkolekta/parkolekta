@@ -1,7 +1,7 @@
-# src/Par/KolektaBundle/Resources/config/doctrine/User_group.orm.yml
-Par\KolektaBundle\Entity\User_group:
+# src/Par/KolektaBundle/Resources/config/doctrine/User_equals.orm.yml
+Par\KolektaBundle\Entity\User_equals:
   type: entity
-  table: user_group
+  table: user_equals
   id:
     id:
       type: integer
@@ -10,19 +10,19 @@ Par\KolektaBundle\Entity\User_group:
     user_id:
       type: integer
       length: 255
-    group_id:
+    equals_id:
       type: integer
       length: 255
   manyToOne:
     user:
       targetEntity: User
-      inversedBy: user_groups
+      inversedBy: user_equals
       joinColumn:
         name: user_id
         referencedColumnName: id
-    user_group:
-      targetEntity: Group
-      inversedBy: user_groups
+    equals:
+      targetEntity: Equals
+      inversedBy: user_equals
       joinColumn:
-        name: group_id
+        name: equals_id
         referencedColumnName: id

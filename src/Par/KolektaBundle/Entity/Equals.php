@@ -5,9 +5,9 @@ namespace Par\KolektaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Group
+ * Equals
  */
-class Group
+class Equals
 {
     /**
      * @var integer
@@ -22,14 +22,14 @@ class Group
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $user_groups;
+    private $user_equals;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->user_groups = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->user_equals = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -46,7 +46,7 @@ class Group
      * Set title
      *
      * @param string $title
-     * @return Group
+     * @return Equals
      */
     public function setTitle($title)
     {
@@ -66,35 +66,35 @@ class Group
     }
 
     /**
-     * Add user_groups
+     * Add user_equals
      *
-     * @param \Par\KolektaBundle\Entity\User_group $userGroups
-     * @return Group
+     * @param \Par\KolektaBundle\Entity\User_equals $userEquals
+     * @return Equals
      */
-    public function addUserGroup(\Par\KolektaBundle\Entity\User_group $userGroups)
+    public function addUserEqual(\Par\KolektaBundle\Entity\User_equals $userEquals)
     {
-        $this->user_groups[] = $userGroups;
+        $this->user_equals[] = $userEquals;
 
         return $this;
     }
 
     /**
-     * Remove user_groups
+     * Remove user_equals
      *
-     * @param \Par\KolektaBundle\Entity\User_group $userGroups
+     * @param \Par\KolektaBundle\Entity\User_equals $userEquals
      */
-    public function removeUserGroup(\Par\KolektaBundle\Entity\User_group $userGroups)
+    public function removeUserEqual(\Par\KolektaBundle\Entity\User_equals $userEquals)
     {
-        $this->user_groups->removeElement($userGroups);
+        $this->user_equals->removeElement($userEquals);
     }
 
     /**
-     * Get user_groups
+     * Get user_equals
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getUserGroups()
+    public function getUserEquals()
     {
-        return $this->user_groups;
+        return $this->user_equals;
     }
 }

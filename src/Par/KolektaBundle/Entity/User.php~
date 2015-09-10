@@ -57,7 +57,7 @@ class User
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $user_equals;
+    private $user_groups;
 
     /**
      * @var \Par\KolektaBundle\Entity\Actors
@@ -70,7 +70,7 @@ class User
     public function __construct()
     {
         $this->debts = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->user_equals = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->user_groups = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -278,36 +278,36 @@ class User
     }
 
     /**
-     * Add user_equals
+     * Add user_groups
      *
-     * @param \Par\KolektaBundle\Entity\User_equals $userEquals
+     * @param \Par\KolektaBundle\Entity\User_group $userGroups
      * @return User
      */
-    public function addUserEqual(\Par\KolektaBundle\Entity\User_equals $userEquals)
+    public function addUserGroup(\Par\KolektaBundle\Entity\User_group $userGroups)
     {
-        $this->user_equals[] = $userEquals;
+        $this->user_groups[] = $userGroups;
 
         return $this;
     }
 
     /**
-     * Remove user_equals
+     * Remove user_groups
      *
-     * @param \Par\KolektaBundle\Entity\User_equals $userEquals
+     * @param \Par\KolektaBundle\Entity\User_group $userGroups
      */
-    public function removeUserEqual(\Par\KolektaBundle\Entity\User_equals $userEquals)
+    public function removeUserGroup(\Par\KolektaBundle\Entity\User_group $userGroups)
     {
-        $this->user_equals->removeElement($userEquals);
+        $this->user_groups->removeElement($userGroups);
     }
 
     /**
-     * Get user_equals
+     * Get user_groups
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getUserEquals()
+    public function getUserGroups()
     {
-        return $this->user_equals;
+        return $this->user_groups;
     }
 
     /**

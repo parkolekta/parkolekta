@@ -33,13 +33,13 @@ Par\KolektaBundle\Entity\User:
     debts:
       targetEntity: Debts
       mappedBy: user
-    user_groups:
-      targetEntity: User_group
+    user_equals:
+      targetEntity: User_equals
       mappedBy: user
   manyToOne:
-    role:
-      targetEntity: Role
+    actors:
+      targetEntity: Actors
       inversedBy: users
       joinColumn:
-        name: role_id
+        name: actors_id
         referencedColumnName: id

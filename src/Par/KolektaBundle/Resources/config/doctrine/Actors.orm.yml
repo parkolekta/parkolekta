@@ -1,7 +1,7 @@
-# src/Par/KolektaBundle/Resources/config/doctrine/Role.orm.yml
-Par\KolektaBundle\Entity\Role:
+# src/Par/KolektaBundle/Resources/config/doctrine/Actors.orm.yml
+Par\KolektaBundle\Entity\Actors:
   type: entity
-  table: role
+  table: actors
   id:
     id:
       type: integer
@@ -14,4 +14,4 @@ Par\KolektaBundle\Entity\Role:
   oneToMany:
     users:
       targetEntity: User
-      mappedBy: role
+      mappedBy: actors

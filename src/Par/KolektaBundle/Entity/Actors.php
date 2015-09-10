@@ -5,9 +5,9 @@ namespace Par\KolektaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Role
+ * Actors
  */
-class Role
+class Actors
 {
     /**
      * @var integer
@@ -46,7 +46,7 @@ class Role
      * Set title
      *
      * @param string $title
-     * @return Role
+     * @return Actors
      */
     public function setTitle($title)
     {
@@ -69,7 +69,7 @@ class Role
      * Add users
      *
      * @param \Par\KolektaBundle\Entity\User $users
-     * @return Role
+     * @return Actors
      */
     public function addUser(\Par\KolektaBundle\Entity\User $users)
     {

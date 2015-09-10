@@ -5,9 +5,9 @@ namespace Par\KolektaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * User_group
+ * User_equals
  */
-class User_group
+class User_equals
 {
     /**
      * @var integer
@@ -22,7 +22,7 @@ class User_group
     /**
      * @var integer
      */
-    private $group_id;
+    private $equals_id;
 
     /**
      * @var \Par\KolektaBundle\Entity\User
@@ -30,9 +30,9 @@ class User_group
     private $user;
 
     /**
-     * @var \Par\KolektaBundle\Entity\Group
+     * @var \Par\KolektaBundle\Entity\Equals
      */
-    private $user_group;
+    private $equals;
 
 
     /**
@@ -49,7 +49,7 @@ class User_group
      * Set user_id
      *
      * @param integer $userId
-     * @return User_group
+     * @return User_equals
      */
     public function setUserId($userId)
     {
@@ -69,33 +69,33 @@ class User_group
     }
 
     /**
-     * Set group_id
+     * Set equals_id
      *
-     * @param integer $groupId
-     * @return User_group
+     * @param integer $equalsId
+     * @return User_equals
      */
-    public function setGroupId($groupId)
+    public function setEqualsId($equalsId)
     {
-        $this->group_id = $groupId;
+        $this->equals_id = $equalsId;
 
         return $this;
     }
 
     /**
-     * Get group_id
+     * Get equals_id
      *
      * @return integer 
      */
-    public function getGroupId()
+    public function getEqualsId()
     {
-        return $this->group_id;
+        return $this->equals_id;
     }
 
     /**
      * Set user
      *
      * @param \Par\KolektaBundle\Entity\User $user
-     * @return User_group
+     * @return User_equals
      */
     public function setUser(\Par\KolektaBundle\Entity\User $user = null)
     {
@@ -115,25 +115,25 @@ class User_group
     }
 
     /**
-     * Set user_group
+     * Set equals
      *
-     * @param \Par\KolektaBundle\Entity\Group $userGroup
-     * @return User_group
+     * @param \Par\KolektaBundle\Entity\Equals $equals
+     * @return User_equals
      */
-    public function setUserGroup(\Par\KolektaBundle\Entity\Group $userGroup = null)
+    public function setEquals(\Par\KolektaBundle\Entity\Equals $equals = null)
     {
-        $this->user_group = $userGroup;
+        $this->equals = $equals;
 
         return $this;
     }
 
     /**
-     * Get user_group
+     * Get equals
      *
-     * @return \Par\KolektaBundle\Entity\Group 
+     * @return \Par\KolektaBundle\Entity\Equals 
      */
-    public function getUserGroup()
+    public function getEquals()
     {
-        return $this->user_group;
+        return $this->equals;
     }
 }
